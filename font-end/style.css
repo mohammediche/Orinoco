@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f2e8f0;
+}
+header img {
+  height: 80px;
+  width: 140px;
+}
+.navigation li a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #98495f;
+  padding-right: 60px;
+}
+
+/********Le contenu********/
+.contenu {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.mini-contenu {
+  width: 30%;
+  margin-bottom: 50px;
+  box-shadow: 0 0 6px 3px #f7d9f1;
+  padding-bottom: 10px;
+  background-color: #f2e8f09c;
+  transition: 300ms;
+}
+.mini-contenu img {
+  height: 200px;
+  width: 100%;
+}
+.mini-contenu p {
+  padding: 10px 0;
+}
+h1 {
+  font-family: "Kalam", cursive;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 22px;
+}
+span {
+  font-weight: bold;
+  background-color: #b06d9d;
+  padding: 5px 10px;
+  color: gold;
+  border-radius: 10px;
+}
+
+/******HOVER*******/
+.mini-contenu:hover {
+  transform: scale(1.08);
+}
