@@ -1,3 +1,4 @@
+/*Choses géneral + Header*/
 @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
 * {
   padding: 0;
@@ -65,7 +66,7 @@ h1 {
 h2 {
   font-size: 22px;
 }
-span {
+main span {
   font-weight: bold;
   background-color: #b06d9d;
   padding: 5px 10px;
@@ -76,4 +77,33 @@ span {
 /******HOVER*******/
 .mini-contenu:hover {
   transform: scale(1.08);
+}
+
+/****FOOTER****/
+.contenu-final {
+  background-color: #f2e8f0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  font-size: 20px;
+}
+.footer-icons {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  /*flex-direction: column; Pour responsive */
+}
+.footer-icons a {
+  font-size: 30px;
+  color: #8a4376;
+}
+.contenu-final span {
+  border-bottom: 1px solid #b06d9d;
+  width: 80%;
+}
+.contenu-final p {
+  padding-top: 20px;
 }
