@@ -103,6 +103,7 @@ header img {
   border: 1px solid #dddddd;
   border-radius: 10px;
   width: 200px;
+  font-weight: bold;
 }
 .select:focus-visible {
   border: 1px solid #eab8db;
@@ -122,13 +123,13 @@ header img {
 }
 .panier {
   padding: 10px 15px;
-  margin-top: 33px;
+  margin: 25px 0 10px 0;
   border-radius: 10px;
   color: white;
   background: black;
   font-size: 18px;
   transition: 300ms;
-  border: 1px solid black;
+  border: 1px solid rgb(19, 18, 18);
 }
 .panier:hover {
   background-color: #8a4376;
@@ -137,6 +138,17 @@ header img {
 label {
   font-weight: bold;
   margin: 8px 0;
+}
+.quantité {
+  font-size: 18px;
+  padding: 10px 15px;
+  background-color: #f7f7f7;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  width: 110px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 5px;
 }
 
 /****FOOTER****/
@@ -184,5 +196,6 @@ label {
   }
   .select {
     margin-left: 32px;
+    margin-bottom: 20px;
   }
-} ;
+}
