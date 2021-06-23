@@ -109,6 +109,11 @@ header img {
   border: 1px solid #eab8db;
   outline: none;
 }
+
+.select > option:selected {
+  
+}
+
 .flexBoutons {
   display: flex;
   justify-content: space-between;
