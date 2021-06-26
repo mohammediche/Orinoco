@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylePages.css">
+    <title>ORinoco | panier</title>
+</head>
+<body>
+    <header> 
+        <a href="../../index.html"><img src="../../back-end/images/logo.png" alt="logo"></a>     
+        <nav>                    
+              <ul class="navigation">       
+                 <li><a href="panier.html"><i class="fas fa-shopping-cart"></i></a></li>
+             </ul>   
+        </nav>
+    </header>
+    <div class="icon_retour">
+        <a href="../../index.html">
+        <i class="far fa-arrow-alt-circle-left"></i>
+       </a>
+    </div>
+    <main class="Mon-main">
+        <h1>Finaliser votre commande</h1>
+        <section class="section-panier">
+            <h2>Mon panier</h2>
+            <table class="tableau">
+                <thead>
+                <tr>
+                    <th>Peluche</th>
+                    <th>Couleur</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
+                </tr>
+               </thead>
+                <tr>
+                    <td colspan="4">Votre panier est actuellement vide.</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-width"></td>
+                    <td>Prix total de la commande</td>
+                </tr>
+            </table>
+        </section>
+        <hr>
+        <section class="coordonnées">
+            <h2>Mes coordonnées</h2>
+         <form class="contenu-form" action="merci.html">  
+                <div class="flex">
+                    <label for="nom">Votre nom</label>
+                    <input class="input" type="text" name="nom" id="nom" required> 
+                </div>
+
+                <div class="flex">
+                    <label for="prénom">Votre prénom</label>
+                    <input class="input" type="text" name="prénom" id="prénom" required> 
+                </div> 
+
+                <div class="flex grid">  
+                    <label for="Adresse">Adresse</label>
+                    <input class="input" type="text" name="Adresse" id="Adresse" required> 
+                </div>                     
+  
+                <div class="flex grid">
+                    <label for="ville">Ville</label> 
+                    <input class="input" type="text" name="ville" id="ville" required>
+                </div>
+
+                <div class="flex">   
+                    <label for="code">Code postal</label>   
+                    <input class="input" type="text" name="code postale" id="code" required>
+                </div> 
+                
+                <div class="flex">
+                    <label for="mail">E-mail</label> 
+                   <input class="input" type="email" name="email" id="mail" required>
+                </div>
+
+                <div class="div-bouton">
+                   <button class="bouton" type="submit">Procéder au paiement</button>
+                </div> 
+            </form>       
+        </section>
+    </main>
+    <footer class="contenu-final">
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/" target="blank"><i class="icon fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="blank"><i class="icon fab fa-instagram"></i></a>
+            <a href="https://www.twitter.com/" target="blank"><i class="icon fab fa-twitter"></i></a>
+            <a href="mailto:Orinoco.contact@gmail.com"><i class="icon fas fa-envelope"></i></a>
+        </div>
+        <span class="trait"></span>
+            <p>Mentions légales &nbsp; &nbsp; | &nbsp; &nbsp; Contact</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/78eeed9376.js" crossorigin="anonymous"></script>  
+</body>
+</html>

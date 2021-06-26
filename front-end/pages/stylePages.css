@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
 /*Choses géneral + Header*/
 * {
   padding: 0;
@@ -15,6 +16,9 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+strong {
+  font-size: 37px;
 }
 header {
   display: flex;
@@ -55,8 +59,6 @@ header img {
   border-radius: 20px;
   margin-bottom: 50px;
   margin-top: 20px;
-  /*TEST*/
-  animation: anime 4s ease-in-out infinite;
 }
 @keyframes anime {
   0% {
@@ -110,10 +112,6 @@ header img {
   outline: none;
 }
 
-.select > option:selected {
-  
-}
-
 .flexBoutons {
   display: flex;
   justify-content: space-between;
@@ -140,7 +138,7 @@ header img {
   background-color: #8a4376;
   cursor: pointer;
 }
-label {
+.flexBoutons label {
   font-weight: bold;
   margin: 8px 0;
 }
@@ -203,4 +201,154 @@ label {
     margin-left: 32px;
     margin-bottom: 20px;
   }
+}
+@media screen and (max-width: 550px) {
+  .footer-icons {
+    flex-direction: column;
+  }
+}
+
+/******************PAGE PANIER*******************/
+main h1 {
+  margin: 40px;
+  font-family: "Kalam";
+  text-align: center;
+  font-size: 36px;
+}
+main h2 {
+  padding: 20px 0;
+}
+td {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+}
+th {
+  width: 25%;
+  padding: 5px 0px;
+}
+thead {
+  background-color: black;
+  color: white;
+}
+.tableau {
+  width: 100%;
+}
+.Mon-main {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.section-panier {
+  background-color: #f1e7ef;
+  padding: 10px;
+  border-radius: 15px 15px 0 0;
+}
+/*******COORDONNées******/
+.coordonnées {
+  background-color: #f0e6ee;
+  padding: 10px 10px 50px 10px;
+  border-radius: 0 0 15px 15px;
+}
+.contenu-form {
+  width: 70%;
+  margin: auto;
+  /*GRID*/
+  display: grid;
+  gap: 20px;
+}
+.flex input {
+  display: flex;
+  width: 98%;
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid darkgrey;
+}
+.grid {
+  grid-column: span 2 / span 2;
+}
+/*FOCUS*/
+.input {
+  outline: none;
+  border: none;
+}
+.input:focus-visible {
+  border-radius: 15px;
+  border: 1px solid #f7b3e0d6;
+  box-shadow: 0px 1px 6px #f7b3e0d6;
+}
+/****BOUTON****/
+.bouton {
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0a0a0a;
+  color: white /*aqua*/;
+  font-size: 16px;
+}
+.div-bouton {
+  grid-column: span 2 / span 2;
+  margin: auto;
+  margin-top: 20px;
+}
+.bouton:hover {
+  color: aqua;
+  cursor: pointer;
+}
+
+/******MEDIA PAGE PANIER******/
+@media screen and (max-width: 605px) {
+  .Mon-main {
+    width: 100%;
+  }
+}
+
+/****************************PAGE FINAL*****************************/
+.background-image {
+  background-image: url("../../back-end/images/back-image.jpeg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /*CENTER LES HN*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  .background-image {
+    height: 400px;
+  }
+}
+.container {
+  background-color: #f1e7efc2;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+.container h1 {
+  font-family: "Kalam";
+  font-size: 30px;
+}
+.container h2,
+p {
+  font-size: 18px;
+}
+/*BOUTON MERCI*/
+.container-btn {
+  padding: 5px;
+  background-color: #6f4f4f;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  box-shadow: 2px 1px 6px black;
+}
+.container-btn:hover {
+  cursor: pointer;
+  border-radius: 8px;
 }
