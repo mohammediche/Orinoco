@@ -107,6 +107,7 @@ header img {
   width: 200px;
   font-weight: bold;
 }
+
 .select:focus-visible {
   border: 1px solid #eab8db;
   outline: none;
