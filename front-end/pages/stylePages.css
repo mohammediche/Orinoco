@@ -30,11 +30,17 @@ header img {
   height: 80px;
   width: 140px;
 }
-.navigation li a {
+.navigation a {
   text-decoration: none;
   font-size: 30px;
   color: #98495f;
-  padding-right: 60px;
+  padding-right: 5px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
 }
 /**ICON RETOUR**/
 .icon_retour a {
@@ -43,6 +49,13 @@ header img {
   left: 35px;
   top: 8px;
   color: #eca4ba !important;
+}
+/*avec js*/
+.ajout-numero-panier {
+  border-radius: 20px;
+  color: white;
+  background: #98485f;
+  padding: 3px 8px;
 }
 
 /******MAIN******/
@@ -352,4 +365,11 @@ p {
 .container-btn:hover {
   cursor: pointer;
   border-radius: 8px;
+}
+
+/********* css pour panier.js **********/
+.imagePanierJs {
+  height: 70px;
+  padding-right: 10px;
+  padding-left: 22px;
 }

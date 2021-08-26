@@ -26,11 +26,23 @@ header img {
   height: 80px;
   width: 140px;
 }
-.navigation li a {
+.navigation a {
   text-decoration: none;
   font-size: 30px;
   color: #98495f;
-  padding-right: 30px;
+  padding-right: 5px;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+}
+/*avec js*/
+.ajout-numero-panier {
+  border-radius: 20px;
+  color: white;
+  background: #98485f;
+  padding: 3px 8px;
 }
 
 /********Le contenu********/
