@@ -14,11 +14,13 @@ const productArticle = () => {
       template += `
       <td><img class = "imagePanierJs" src =${article.imageUrl}></img>
       ${article.name}</td>
-      <td>couleur</td>
-      <td><input type = "number"></td>
+      <td>couleur à voir avec mon mentor</td>
+      <td>
+         <button class="boutonPlusMoins" onclick= "NombreArticleMoins()">-</button>
+         ${article.quantité}
+         <button class="boutonPlusMoins" onclick= "NombreArticlePlus()">+</button>
+      </td>
       <td>${price} €</td>
-
- 
 
       `;
     });
@@ -38,13 +40,15 @@ const productArticle = () => {
     prixTotalPanier.innerHTML = templatePrix;
   }
 };
-/**-----------------Prix d'article(s) -----------------**/
-// const getPrice = (article) => {
-//   // let price = (article.price / 100) * article.quantité;
-//   let template = `
-//   ${price}
-//   `;
-//   couleurPanier.innerHTML = template;
-// };
+
 productArticle();
-/*--------------------------- Prix -------------------------*/
+/*--------------------------- bouton plus + qui sert a ajouter 1 article -------------------------*/
+const NombreArticlePlus = ()=>{
+ 
+}
+/*--------------------------- bouton moins - qui sert a supprimer 1 article -------------------------*/
+const NombreArticleMoins = ()=>{
+ 
+}
+
+

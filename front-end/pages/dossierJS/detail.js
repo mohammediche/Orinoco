@@ -42,7 +42,7 @@ const getData = async () => {
 };
 /**********.split = sert a convertir de objet à string **********/
 window.addEventListener("DOMContentLoaded", () => getData());
-/************ maFonctionAjout pour Clique ajoute au panier**********/
+/************ nombre de cliques sur le bouton "Ajouter au panier"**********/
 const maFonctionAjout = () => {
   let clickStorage = localStorage.getItem("production");
   // console.log(typeof clickStorage); //Type String
@@ -63,53 +63,24 @@ const maFonctionAjout = () => {
 };
 
 /*--------------------------------- Ma fonction Ajout du bon article -----------------------------------*/
-const product = (monArticle) => {
-  let productArticle = [];
+const product = (mesArticles) => {
+  let productArticle = localStorage.getItem("articleChoix");
+  productArticle = JSON.parse(productArticle);
   //JSON.parse c'est pour convertir les données au format JSON qui sont dans le locale storage en objet js.
-  let localeArticle = JSON.parse(localStorage.getItem("articleChoix"));
 
-  if (localeArticle) {
-    //productArticle = JSON.parse(localStorage.getItem("articleChoix"));
-    /*------- si le produit existe déja --------*/
-    // 1 - rechercher le produit dans le panier et le retourner s'il existe
-
-    // 2 - Si le produit n'existe pas donc on push le nouveau produit avec quantité 1
-    // 3 - reécrire le tableau des produits dans le panier
-
-    // 2-A Si le produit existe:
-    // - on incrémente la quantité
-    // 3 - reécrire le tableau des produits dans le panier
-    // 3-A supprimer le produit du panier
-    // 3-B Ajouter le nouveau
-
-    let test = false;
-    localeArticle.forEach((article) => {
-      if (article._id === monArticle._id) {
-        console.log(" plus 1");
-        article.quantité++;
-      } else {
-        // is le produit n'existe pas du tout encore
-        // if (monArticle.quantité) { // si c'es sa première ajout
-        //   monArticle.quantité++;
-        //   localeArticle.push(monArticle);
-        // }
-        console.log("dans nouveau ajout");
-        monArticle.quantité = 1;
-        test = true;
-        return true;
-      }
-    });
-    if (test) {
-      localeArticle.push(monArticle);
-      localStorage.setItem("articleChoix", JSON.stringify(localeArticle));
+  if (productArticle != null) {
+    if (productArticle[mesArticles._id] == undefined) {
+      productArticle = {
+        ...productArticle,
+        [mesArticles._id]: mesArticles,
+      };
     }
-    // localStorage.setItem("articleChoix", JSON.stringify(localeArticle));
+    productArticle[mesArticles._id].quantité++;
   } else {
-    monArticle.quantité = 1;
-    productArticle.push(monArticle);
-    //JSON.stringify c'est pour convertir l'objet js au format JSON.
-    localStorage.setItem("articleChoix", JSON.stringify(productArticle));
+    productArticle = { [mesArticles._id]: mesArticles };
   }
+  mesArticles.quantité = 1;
+  localStorage.setItem("articleChoix", JSON.stringify(productArticle));
 };
 
 /*---------------------------------Ma fonction totalPrix-----------------------------------------*/

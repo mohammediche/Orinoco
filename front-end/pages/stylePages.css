@@ -373,3 +373,19 @@ p {
   padding-right: 10px;
   padding-left: 22px;
 }
+.boutonPlusMoins {
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin: 0 20px;
+  border: 1px solid #eba4ba;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.boutonPlusMoins:hover,
+.boutonPlusMoins:active {
+  cursor: pointer;
+  background-color: black;
+  color: #fff;
+}
+
