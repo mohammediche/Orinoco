@@ -388,4 +388,35 @@ p {
   background-color: black;
   color: #fff;
 }
-
+/* premier td  */
+.image-title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bouton-icon-poubelle {
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+.bouton-icon-poubelle:hover {
+  color: #d63061;
+  animation: animationIconPoubelle 1s infinite ease;
+}
+@keyframes animationIconPoubelle {
+  0% {
+    transform: translateX(1px);
+  }
+  25% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(1px);
+  }
+}

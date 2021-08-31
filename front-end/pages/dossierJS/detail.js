@@ -20,7 +20,7 @@ const getData = async () => {
                     <select class="select">
                        ${final.colors.map(
                          (couleur) =>
-                           `<option class="choixCouleur1">${couleur}</option>`
+                           `<option class="choixCouleur1" value = ${couleur}>${couleur}</option>`
                        )}
                     </select>  
                  </div>                    
@@ -76,24 +76,31 @@ const product = (mesArticles) => {
       };
     }
     productArticle[mesArticles._id].quantité++;
+    // pour la couleur
+    productArticle[mesArticles._id].selectedColor = getColors();
   } else {
     productArticle = { [mesArticles._id]: mesArticles };
   }
   mesArticles.quantité = 1;
+  mesArticles.selectedColor = getColors();
   localStorage.setItem("articleChoix", JSON.stringify(productArticle));
 };
 
 /*---------------------------------Ma fonction totalPrix-----------------------------------------*/
 const totalPrix = (monPrix) => {
-  let articlePrix = localStorage.getItem("totalPrixArticle");
+  let articlesPrix = localStorage.getItem("totalPrixArticle");
   let newPrice = monPrix;
   // console.log(typeof newPrice);
-  // console.log(typeof articlePrix);
-  articlePrix = parseInt(articlePrix);
+  // console.log(typeof articlesPrix);
+  articlesPrix = parseInt(articlesPrix);
   newPrice = parseInt(newPrice);
-  if (articlePrix) {
-    localStorage.setItem("totalPrixArticle", articlePrix + newPrice);
+  if (articlesPrix) {
+    localStorage.setItem("totalPrixArticle", articlesPrix + newPrice);
   } else {
     localStorage.setItem("totalPrixArticle", newPrice);
   }
+};
+/*----------------------------------------- couleur ---------------------------------------*/
+const getColors = () => {
+  return document.querySelector(".select").value;
 };
