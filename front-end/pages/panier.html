@@ -24,6 +24,7 @@
     </div>
     <main class="Mon-main">
         <h1>Finaliser votre commande</h1>
+        <h2 class="h2-displey"> Votre panier est actuellement vide </h2>
         <section class="section-panier">
             <h2>Mon panier</h2>
             <table class="tableau">
@@ -51,41 +52,41 @@
         <hr>
         <section class="coordonnées">
             <h2>Mes coordonnées</h2>
-         <form class="contenu-form" action="merci.html">  
+         <form class="contenu-form" method="post">  
                 <div class="flex">
                     <label for="nom">Votre nom</label>
-                    <input class="input" type="text" name="nom" id="nom" required> 
+                    <input class="input" type="text" name="firstName" id="nom" required pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"> 
                 </div>
 
                 <div class="flex">
                     <label for="prénom">Votre prénom</label>
-                    <input class="input" type="text" name="prénom" id="prénom" required> 
+                    <input class="input" type="text" name="lastName" id="prénom" required pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"> 
                 </div> 
 
                 <div class="flex grid">  
                     <label for="Adresse">Adresse</label>
-                    <input class="input" type="text" name="Adresse" id="Adresse" required> 
+                    <input class="input" type="text" name="Address" id="Adresse" required pattern="^^[A-Z-a-z-0-9\s,'éèàç]{5,}$"> 
                 </div>                     
   
                 <div class="flex grid">
                     <label for="ville">Ville</label> 
-                    <input class="input" type="text" name="ville" id="ville" required>
+                    <input class="input" type="text" name="city" id="ville" required pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$">
                 </div>
 
-                <div class="flex">   
+                <!-- <div class="flex">   
                     <label for="code">Code postal</label>   
-                    <input class="input" type="text" name="code postale" id="code" required>
-                </div> 
+                    <input class="input" type="text" name="code_postale" id="code" required>
+                </div>  -->
                 
                 <div class="flex">
                     <label for="mail">E-mail</label> 
-                   <input class="input" type="email" name="email" id="mail" required>
+                   <input class="input" type="email" name="email" id="mail" required pattern="^[A-Z-a-z-0-9.-_]+[@]{1}[A-Z-a-z-0-9.-_]+[.]{1}[a-z]{2,10}$">
                 </div>
 
                 <div class="div-bouton">
                    <button class="bouton" type="submit">Procéder au paiement</button>
                 </div> 
-            </form>       
+            </form>     
         </section>
     </main>
 

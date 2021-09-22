@@ -1,12 +1,18 @@
 const id = new URLSearchParams(window.location.search).get("key");
 const ContenuDetail = document.querySelector(".mainClass");
+// const testAjout = document.querySelector(".coordonnées");
+
 /*******************Fetch + ajout des données de mon article***********************/
+/*******Avec methode Async & await, le code vas s'exécuter de maniére "asynchrone" ********/
 const getData = async () => {
-  const res = await fetch(
-    "http://localhost:3000/api/teddies/" + id
-  ); /**Pour selectionner le bon article grace à l'ID*/
-  const final = await res.json();
-  const contenuDetailPage = ` 
+  try {
+    const res = await fetch(
+      // j'attends les données avant de les mettre au format .json
+      "http://localhost:3000/api/teddies/" + id
+    ); /**Pour selectionner le bon article (objet) grace à l'ID*/
+    const final = await res.json();
+    console.log(final); //objet
+    const contenuDetailPage = ` 
     <article class="mini-contenu">
       <img src=${final.imageUrl}>
       <div class="paragraphe">
@@ -38,22 +44,25 @@ const getData = async () => {
 
     </article>
     `;
-  ContenuDetail.innerHTML = contenuDetailPage;
+    ContenuDetail.innerHTML = contenuDetailPage;
+  } catch (erreur) {
+    alert(erreur);
+  }
 };
+
 /**********.split = sert a convertir de objet à string **********/
 window.addEventListener("DOMContentLoaded", () => getData());
 /************ nombre de cliques sur le bouton "Ajouter au panier"**********/
 const maFonctionAjout = () => {
-  let clickStorage = localStorage.getItem("production");
+  let production = localStorage.getItem("production");
   // console.log(typeof clickStorage); //Type String
-  clickStorage = parseInt(clickStorage);
+  production = parseInt(production);
   // console.log(typeof clickStorage); //Transform Type number
 
   // S'il y a deja des produits enregistré dans local storage
-  if (clickStorage) {
-    localStorage.setItem("production", clickStorage + 1);
-    document.querySelector(".ajout-numero-panier").textContent =
-      clickStorage + 1;
+  if (production) {
+    localStorage.setItem("production", production + 1);
+    document.querySelector(".ajout-numero-panier").textContent = production + 1;
 
     // S'IL N'Y A PAS des produits enregistré dans local storage
   } else {
@@ -64,38 +73,40 @@ const maFonctionAjout = () => {
 
 /*--------------------------------- Ma fonction Ajout du bon article -----------------------------------*/
 const product = (mesArticles) => {
-  let productArticle = localStorage.getItem("articleChoix");
-  productArticle = JSON.parse(productArticle);
-  //JSON.parse c'est pour convertir les données au format JSON qui sont dans le locale storage en objet js.
-
-  if (productArticle != null) {
-    if (productArticle[mesArticles._id] == undefined) {
-      productArticle = {
-        ...productArticle,
-        [mesArticles._id]: mesArticles,
+  let panier = localStorage.getItem("articleChoix");
+  panier = JSON.parse(panier);
+  //JSON.parse c'est pour convertir les données au format JSON string qui sont dans le locale storage en objet js.
+  // JSON.stringify pour convretir objet js au format JSON string
+  if (panier != null) {
+    if (panier[mesArticles._id] == undefined) {
+      //quand on ajoute un deuxiéme différent article, ca affiche erreur
+      panier = {
+        ...panier, // les articles déja disponible, tu les laisse et tu en rajoute celui d'en dessous
+        [mesArticles._id]: mesArticles, // l'article ajouté *
       };
     }
-    productArticle[mesArticles._id].quantité++;
+    panier[mesArticles._id].quantité++;
+
     // pour la couleur
-    productArticle[mesArticles._id].selectedColor = getColors();
+    panier[mesArticles._id].selectedColor = getColors();
   } else {
-    productArticle = { [mesArticles._id]: mesArticles };
+    panier = { [mesArticles._id]: mesArticles };
   }
   mesArticles.quantité = 1;
   mesArticles.selectedColor = getColors();
-  localStorage.setItem("articleChoix", JSON.stringify(productArticle));
+  localStorage.setItem("articleChoix", JSON.stringify(panier));
 };
 
 /*---------------------------------Ma fonction totalPrix-----------------------------------------*/
 const totalPrix = (monPrix) => {
-  let articlesPrix = localStorage.getItem("totalPrixArticle");
+  let prixTotal = localStorage.getItem("totalPrixArticle");
   let newPrice = monPrix;
-  // console.log(typeof newPrice);
-  // console.log(typeof articlesPrix);
-  articlesPrix = parseInt(articlesPrix);
+  // console.log(typeof newPrice); //string
+  // console.log(typeof newPrice); //string
+  prixTotal = parseInt(prixTotal);
   newPrice = parseInt(newPrice);
-  if (articlesPrix) {
-    localStorage.setItem("totalPrixArticle", articlesPrix + newPrice);
+  if (prixTotal) {
+    localStorage.setItem("totalPrixArticle", prixTotal + newPrice);
   } else {
     localStorage.setItem("totalPrixArticle", newPrice);
   }
