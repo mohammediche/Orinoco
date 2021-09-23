@@ -137,6 +137,11 @@ const createOrder = async (e) => {
         "Content-Type": "application/json",
       },
     });
+    // console.log(result);
+    if (!result.ok) {
+      alert("erreur lors de l'exécution de la commande !");
+      return;
+    }
     let orderId = (await result.json()).orderId;
     // console.log(orderId);
     localStorage.setItem("orderId", orderId);
@@ -144,7 +149,7 @@ const createOrder = async (e) => {
     // console.log(result.orderId);
     window.location.replace("merci.html");
   } catch (error) {
-    alert = error;
+    alert(error); // erreur 500
   }
 };
 form.addEventListener("submit", createOrder);

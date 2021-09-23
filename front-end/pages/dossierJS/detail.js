@@ -11,7 +11,7 @@ const getData = async () => {
       "http://localhost:3000/api/teddies/" + id
     ); /**Pour selectionner le bon article (objet) grace à l'ID*/
     const final = await res.json();
-    console.log(final); //objet
+    // console.log(final); //objet
     const contenuDetailPage = ` 
     <article class="mini-contenu">
       <img src=${final.imageUrl}>
@@ -49,8 +49,6 @@ const getData = async () => {
     alert(erreur);
   }
 };
-
-/**********.split = sert a convertir de objet à string **********/
 window.addEventListener("DOMContentLoaded", () => getData());
 /************ nombre de cliques sur le bouton "Ajouter au panier"**********/
 const maFonctionAjout = () => {
