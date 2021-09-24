@@ -16,6 +16,9 @@ const recuperation = async () => {
   try {
     const reponse = await fetch(url); // j'attends les données avant de les mettre au format .json
     const resultats = await reponse.json();
+    /*On met en attentes l'action qui risque de prendre du temps à s’éxécuter, 
+    et donc pour éviter de ralentir notre site,on continue nos actions qui poursuivent
+     et dés que les promesses sont prêtes, elles s’éxécutent*/
     console.log(resultats);
     let carte = "";
     resultats.forEach((resultat) => {
