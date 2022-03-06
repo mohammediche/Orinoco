@@ -8,7 +8,7 @@ Les technologies utilisées :
  - HTML5
  - CSS3
  - Git & Github
- - 
+ 
 Compétences évaluées :
  - Interagir avec une API avec JavaScript
  - Gérer des événements JavaScript
